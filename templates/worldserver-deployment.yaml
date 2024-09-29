@@ -16,11 +16,11 @@ spec:
         - name: worldserver
           env:
             - name: AC_LOGIN_DATABASE_INFO
-              value: ac-database;3306;root;root;acore_auth
+              value: ac-database;3306;root;password;acore_auth
             - name: AC_CHARACTER_DATABASE_INFO
-              value: ac-database;3306;root;root;acore_characters
+              value: ac-database;3306;root;password;acore_characters
             - name: AC_WORLD_DATABASE_INFO
-              value: ac-database;3306;root;root;acore_world
+              value: ac-database;3306;root;password;acore_world
           image: "{{ .Values.authserver.image }}"
           tty: true
           stdin: true

@@ -16,7 +16,7 @@ spec:
         - name: authserver
           env:
             - name: AC_LOGIN_DATABASE_INFO
-              value: ac-database;3306;root;root;acore_auth
+              value: ac-database;3306;root;password;acore_auth
           image: "{{ .Values.authserver.image }}"
           ports:
             - containerPort: {{ .Values.authserver.port }}
