@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ac-client-data
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ac-client-data
+  template:
+    metadata:
+      labels:
+        app: ac-client-data
+    spec:
+      containers:
+        - name: ac-client-data
+          image: "{{ .Values.acClientData.image }}"
+          volumeMounts:
+            - name: client-data-volume
+              mountPath: "{{ .Values.acClientData.volume.mountPath }}"
+      volumes:
+        - name: client-data-volume
+          persistentVolumeClaim:
+            claimName: ac-client-data-pvc

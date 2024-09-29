@@ -23,6 +23,7 @@ spec:
           volumeMounts:
             - name: authserver-data
               mountPath: /path/to/authserver/data
+          restartPolicy: Always
       volumes:
         - name: authserver-data
           persistentVolumeClaim:

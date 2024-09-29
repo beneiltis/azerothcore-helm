@@ -36,6 +36,13 @@ acDbImport:
     AC_CHARACTER_DATABASE_INFO: "ac-database;3306;root;password;acore_characters"
     AC_CLOSE_IDLE_CONNECTIONS: "0"
 
+acClientData:
+  image: acore/ac-wotlk-client-data:12.0.0-dev.1
+  volume:
+    name: ac-client-data
+    mountPath: /azerothcore/env/dist/data
+    size: 5Gi  # Define the size of the volume
+
 # Volumes
 persistence:
   enabled: true

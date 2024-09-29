@@ -33,6 +33,7 @@ spec:
           volumeMounts:
             - name: worldserver-data
               mountPath: /path/to/worldserver/data
+          restartPolicy: Always
       volumes:
         - name: worldserver-data
           persistentVolumeClaim:
