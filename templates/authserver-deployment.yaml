@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ac-authserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ac-authserver
+  template:
+    metadata:
+      labels:
+        app: ac-authserver
+    spec:
+      containers:
+        - name: authserver
+          image: "{{ .Values.authserver.image }}"
+          ports:
+            - containerPort: {{ .Values.authserver.port }}
+          volumeMounts:
+            - name: authserver-data
+              mountPath: /path/to/authserver/data
+      volumes:
+        - name: authserver-data
+          persistentVolumeClaim:
+            claimName: authserver-pvc

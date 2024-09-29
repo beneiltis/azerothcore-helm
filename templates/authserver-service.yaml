@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ac-authserver
+spec:
+  type: LoadBalancer
+  ports:
+    - port: {{ .Values.authserver.port }}
+      targetPort: {{ .Values.authserver.port }}
+      protocol: TCP
+  selector:
+    app: ac-authserver

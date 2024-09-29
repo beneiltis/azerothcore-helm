@@ -1,0 +1,32 @@
+# Database settings
+mysql:
+  image: mysql:8.0
+  rootPassword: password
+  externalPort: 63306
+
+# Worldserver settings
+worldserver:
+  image: acore/ac-wotlk-worldserver:12.0.0-dev.1
+  user: acore
+  worldPort: 8085
+  soapPort: 7878
+
+# Authserver settings
+authserver:
+  image: acore/ac-wotlk-authserver:12.0.0-dev.1
+  port: 3724
+
+# PhpMyAdmin
+phpmyadmin:
+  image: phpmyadmin
+  port: 8080
+
+# Eluna TypeScript settings
+elunaTs:
+  image: acore/eluna-ts:master
+
+# Volumes
+persistence:
+  enabled: true
+  databaseVolumeSize: 10Gi
+  clientDataVolumeSize: 5Gi

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ac-worldserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ac-worldserver
+  template:
+    metadata:
+      labels:
+        app: ac-worldserver
+    spec:
+      containers:
+        - name: worldserver
+          tty: true
+          stdin: true
+          image: "{{ .Values.worldserver.image }}"
+          ports:
+            - containerPort: {{ .Values.worldserver.worldPort }}
+            - containerPort: {{ .Values.worldserver.soapPort }}
+          env:
+            - name: AC_USER
+              value: "{{ .Values.worldserver.user }}"
+          volumeMounts:
+            - name: worldserver-data
+              mountPath: /path/to/worldserver/data
+      volumes:
+        - name: worldserver-data
+          persistentVolumeClaim:
+            claimName: worldserver-pvc
+            

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ac-worldserver
+spec:
+  type: LoadBalancer
+  ports:
+    - port: {{ .Values.worldserver.worldPort }}
+      targetPort: {{ .Values.worldserver.worldPort }}
+      protocol: TCP
+      name: wow-world-port
+    - port: {{ .Values.worldserver.soapPort }}
+      targetPort: {{ .Values.worldserver.soapPort }}
+      protocol: TCP
+      name: wow-soap-port
+  selector:
+    app: ac-worldserver
+    
