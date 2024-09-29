@@ -14,6 +14,14 @@ spec:
     spec:
       containers:
         - name: worldserver
+          env:
+            - name: AC_LOGIN_DATABASE_INFO
+              value: ac-database;3306;root;root;acore_auth
+            - name: AC_CHARACTER_DATABASE_INFO
+              value: ac-database;3306;root;root;acore_characters
+            - name: AC_WORLD_DATABASE_INFO
+              value: ac-database;3306;root;root;acore_world
+          image: "{{ .Values.authserver.image }}"
           tty: true
           stdin: true
           image: "{{ .Values.worldserver.image }}"
