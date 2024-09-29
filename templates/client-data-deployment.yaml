@@ -16,9 +16,9 @@ spec:
         - name: ac-client-data
           image: "{{ .Values.acClientData.image }}"
           volumeMounts:
-            - name: client-data-volume
+            - name: ac-data
               mountPath: "{{ .Values.acClientData.volume.mountPath }}"
       volumes:
-        - name: client-data-volume
+        - name: ac-data
           persistentVolumeClaim:
-            claimName: ac-client-data-pvc
+            claimName: ac-data-pvc

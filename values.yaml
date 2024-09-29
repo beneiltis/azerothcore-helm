@@ -41,10 +41,8 @@ acClientData:
   volume:
     name: ac-client-data
     mountPath: /azerothcore/env/dist/data
-    size: 5Gi  # Define the size of the volume
 
 # Volumes
 persistence:
   enabled: true
-  databaseVolumeSize: 10Gi
-  clientDataVolumeSize: 5Gi
+  dataVolumeSize: 20Gi

@@ -30,4 +30,11 @@ spec:
               value: "{{ .Values.acDbImport.environment.AC_CHARACTER_DATABASE_INFO }}"
             - name: AC_CLOSE_IDLE_CONNECTIONS
               value: "{{ .Values.acDbImport.environment.AC_CLOSE_IDLE_CONNECTIONS }}"
+          volumeMounts:
+            - name: ac-data
+              mountPath: "{{ .Values.acClientData.volume.mountPath }}"
       restartPolicy: Always
+      volumes:
+        - name: ac-data
+          persistentVolumeClaim:
+            claimName: ac-data-pvc

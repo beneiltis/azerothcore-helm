@@ -21,9 +21,9 @@ spec:
           ports:
             - containerPort: {{ .Values.authserver.port }}
           volumeMounts:
-            - name: authserver-data
+            - name: ac-data
               mountPath: /path/to/authserver/data
       volumes:
-        - name: authserver-data
+        - name: ac-data
           persistentVolumeClaim:
-            claimName: authserver-pvc
+            claimName: ac-data-pvc

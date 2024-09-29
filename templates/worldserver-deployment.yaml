@@ -31,10 +31,10 @@ spec:
             - name: AC_WORLD_DATABASE_INFO
               value: ac-database;3306;root;password;acore_world
           volumeMounts:
-            - name: worldserver-data
-              mountPath: /path/to/worldserver/data
+            - name: ac-data
+              mountPath: "{{ .Values.acClientData.volume.mountPath }}"
       volumes:
-        - name: worldserver-data
+        - name: ac-data
           persistentVolumeClaim:
-            claimName: worldserver-pvc
+            claimName: ac-data-pvc
             
