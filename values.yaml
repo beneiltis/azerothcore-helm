@@ -25,6 +25,17 @@ phpmyadmin:
 elunaTs:
   image: acore/eluna-ts:master
 
+acDbImport:
+  image: acore/ac-wotlk-db-import:12.0.0-dev.1
+  environment:
+    AC_DISABLE_INTERACTIVE: "1"
+    AC_DATA_DIR: "/azerothcore/env/dist/data"
+    AC_LOGS_DIR: "/azerothcore/env/dist/logs"
+    AC_LOGIN_DATABASE_INFO: "ac-database;3306;root;password;acore_auth"
+    AC_WORLD_DATABASE_INFO: "ac-database;3306;root;password;acore_world"
+    AC_CHARACTER_DATABASE_INFO: "ac-database;3306;root;password;acore_characters"
+    AC_CLOSE_IDLE_CONNECTIONS: "0"
+
 # Volumes
 persistence:
   enabled: true
