@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ac-data
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: {{ .Values.persistence.dataVolumeSize }}
+  mountOptions:
+  - nolock
+  nfs:
+    path: /exports
+    server: nfs-service
+  persistentVolumeReclaimPolicy: Delete
+  volumeMode: Filesystem
