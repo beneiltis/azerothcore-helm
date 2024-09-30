@@ -3,10 +3,7 @@ kind: Service
 metadata:
   name: nfs-service
 spec:
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
+  clusterIP: None  # This makes the service headless
   ports:
   - name: nfs-udp
     port: 2049
@@ -62,7 +59,3 @@ spec:
     targetPort: 111
   selector:
     app: nfs-server-azeroth-core
-  sessionAffinity: None
-  type: ClusterIP
-status:
-  loadBalancer: {}
