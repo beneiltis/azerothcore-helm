@@ -11,6 +11,6 @@ spec:
   - nolock
   nfs:
     path: /exports
-    server: nfs-service
+    server: nfs-service.{{ .Release.Namespace }}.svc.cluster.local
   persistentVolumeReclaimPolicy: Delete
   volumeMode: Filesystem
