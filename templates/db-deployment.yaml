@@ -24,10 +24,10 @@ spec:
                   name: mysql-secret
                   key: root-password
           volumeMounts:
-            - name: ac-data-pvc
+            - name: ac-database-pvc
               mountPath: /var/lib/mysql
       volumes:
-        - name: ac-data-pvc
+        - name: ac-database-pvc
           persistentVolumeClaim:
-            claimName: ac-data-pvc
+            claimName: ac-database-pvc
             

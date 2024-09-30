@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-server-azeroth-core
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfs-server-azeroth-core
+  template:
+    metadata:
+      labels:
+        app: nfs-server-azeroth-core
+    spec:
+      containers:
+      - image: ghcr.io/mogenius/nfs-server:latest
+        imagePullPolicy: Always
+        name: nfs-server
+        ports:
+        - containerPort: 2049
+          name: nfs
+          protocol: TCP
+        - containerPort: 2049
+          name: nfs-udp
+          protocol: UDP
+        - containerPort: 2045
+          name: mountd-2045
+          protocol: TCP
+        - containerPort: 2045
+          name: mountd-2045-udp
+          protocol: UDP
+        - containerPort: 2046
+          name: mountd-2046-tcp
+          protocol: TCP
+        - containerPort: 2046
+          name: mountd-2046-udp
+          protocol: UDP
+        - containerPort: 2047
+          name: mountd-2047
+          protocol: TCP
+        - containerPort: 2047
+          name: mountd-2047-udp
+          protocol: UDP
+        - containerPort: 2048
+          name: mountd
+          protocol: TCP
+        - containerPort: 2048
+          name: mountd-udp
+          protocol: UDP
+        - containerPort: 111
+          name: rpcbind
+          protocol: TCP
+        - containerPort: 111
+          name: rpcbind-udp
+          protocol: UDP
+        securityContext:
+          allowPrivilegeEscalation: true
+          privileged: true
+        volumeMounts:
+        - mountPath: /exports
+          name: storage
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: nfs-server-azeroth-core

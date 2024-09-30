@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ac-data-pvc
+  name: ac-database-pvc
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: {{ .Values.persistence.dataVolumeSize }}
+      storage: {{ .Values.persistence.databaseVolumeSize }}
