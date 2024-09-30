@@ -4,7 +4,7 @@ metadata:
   name: nfs-server-azeroth-core
 spec:
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   capacity:
     storage: {{ .Values.persistence.dataVolumeSize }}
   mountOptions:
