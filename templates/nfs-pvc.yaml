@@ -8,5 +8,6 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistence.dataVolumeSize }}
+  storageClassName: ""
   volumeMode: Filesystem
   volumeName: nfs-server-azeroth-core
