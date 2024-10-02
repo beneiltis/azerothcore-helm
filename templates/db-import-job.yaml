@@ -28,7 +28,6 @@ spec:
           volumeMounts:
             - name: ac-data
               mountPath: "{{ .Values.acClientData.volume.mountPath }}"
-      restartPolicy: Always
       volumes:
         - name: ac-data
           persistentVolumeClaim:
