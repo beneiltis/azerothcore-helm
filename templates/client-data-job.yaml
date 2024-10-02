@@ -1,9 +1,9 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
   name: ac-client-data
 spec:
-  replicas: 1
+  backoffLimit: 10
   selector:
     matchLabels:
       app: ac-client-data
@@ -12,6 +12,7 @@ spec:
       labels:
         app: ac-client-data
     spec:
+      restartPolicy: OnFailure
       containers:
         - name: ac-client-data
           image: "{{ .Values.acClientData.image }}"
