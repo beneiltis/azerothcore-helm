@@ -24,6 +24,10 @@ spec:
           env:
             - name: AC_USER
               value: "{{ .Values.worldserver.user }}"
+            - name: AC_LOGS_DIR
+              value: /azerothcore/env/dist/logs
+            - name: AC_DATA_DIR
+              value: /azerothcore/env/dist/data
             - name: AC_LOGIN_DATABASE_INFO
               value: ac-database;3306;root;password;acore_auth
             - name: AC_CHARACTER_DATABASE_INFO

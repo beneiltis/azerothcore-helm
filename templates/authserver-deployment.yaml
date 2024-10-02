@@ -22,7 +22,7 @@ spec:
             - containerPort: {{ .Values.authserver.port }}
           volumeMounts:
             - name: ac-data
-              mountPath: /path/to/authserver/data
+              mountPath: /azerothcore/data
       volumes:
         - name: ac-data
           persistentVolumeClaim:
