@@ -8,6 +8,5 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistence.dataVolumeSize }}
-  storageClassName: ""
-  volumeMode: Filesystem
+  storageClassName: "nfs"
   volumeName: ac-data
