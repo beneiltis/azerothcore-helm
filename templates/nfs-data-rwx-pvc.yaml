@@ -4,9 +4,8 @@ metadata:
   name: ac-data
 spec:
   accessModes:
-  - ReadWriteMany
+    - ReadWriteMany
   resources:
     requests:
       storage: {{ .Values.persistence.dataVolumeSize }}
-  storageClassName: "nfs"
-  volumeName: ac-data
+  storageClassName: nfs
