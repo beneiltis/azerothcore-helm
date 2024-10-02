@@ -4,13 +4,7 @@ metadata:
   name: ac-db-import
 spec:
   backoffLimit: 10
-  selector:
-    matchLabels:
-      app: ac-db-import
   template:
-    metadata:
-      labels:
-        app: ac-db-import
     spec:
       restartPolicy: OnFailure
       containers:

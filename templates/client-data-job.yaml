@@ -4,13 +4,7 @@ metadata:
   name: ac-client-data
 spec:
   backoffLimit: 10
-  selector:
-    matchLabels:
-      app: ac-client-data
   template:
-    metadata:
-      labels:
-        app: ac-client-data
     spec:
       restartPolicy: OnFailure
       containers:
