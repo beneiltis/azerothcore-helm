@@ -21,4 +21,4 @@ spec:
       volumes:
         - name: ac-data
           persistentVolumeClaim:
-            claimName: ac-data-pvc
+            claimName: ac-data

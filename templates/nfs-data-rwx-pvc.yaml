@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ac-data-pvc
+  name: ac-data
 spec:
   accessModes:
   - ReadWriteMany
