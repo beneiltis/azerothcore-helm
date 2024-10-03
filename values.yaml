@@ -1,5 +1,5 @@
 #global
-tag: 1.0.9
+tag: 1.0.11
 
 # Database settings
 mysql:
