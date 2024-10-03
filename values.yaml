@@ -6,14 +6,14 @@ mysql:
 
 # Worldserver settings
 worldserver:
-  image: acore/ac-wotlk-worldserver:12.0.0-dev.1
+  image: biltisberger/ac-wotlk-worldserver:1.0.2
   user: acore
   worldPort: 8085
   soapPort: 7878
 
 # Authserver settings
 authserver:
-  image: acore/ac-wotlk-authserver:12.0.0-dev.1
+  image: biltisberger/ac-wotlk-authserver:1.0.2
   port: 3724
 
 # PhpMyAdmin
@@ -26,7 +26,7 @@ elunaTs:
   image: acore/eluna-ts:master
 
 acDbImport:
-  image: acore/ac-wotlk-db-import:12.0.0-dev.1
+  image: acore/ac-wotlk-db-import:1.0.2
   environment:
     AC_DISABLE_INTERACTIVE: "1"
     AC_DATA_DIR: "/azerothcore/env/dist/data"
@@ -37,7 +37,7 @@ acDbImport:
     AC_CLOSE_IDLE_CONNECTIONS: "0"
 
 acClientData:
-  image: acore/ac-wotlk-client-data:12.0.0-dev.1
+  image: biltisberger/ac-wotlk-client-data:1.0.2
   volume:
     name: ac-client-data
     mountPath: /azerothcore/env/dist/data
