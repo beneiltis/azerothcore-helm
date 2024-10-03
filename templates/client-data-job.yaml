@@ -9,7 +9,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: ac-client-data
-          image: "{{ .Values.acClientData.image }}"
+          image: "{{ .Values.acClientData.image }}:{{ .Values.tag }}"
           volumeMounts:
             - name: ac-data
               mountPath: "{{ .Values.acClientData.volume.mountPath }}"

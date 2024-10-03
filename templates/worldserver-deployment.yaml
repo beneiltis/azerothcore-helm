@@ -14,10 +14,9 @@ spec:
     spec:
       containers:
         - name: worldserver
-          image: "{{ .Values.authserver.image }}"
+          image: "{{ .Values.authserver.image }}:{{ .Values.tag }}"
           tty: true
           stdin: true
-          image: "{{ .Values.worldserver.image }}"
           ports:
             - containerPort: {{ .Values.worldserver.worldPort }}
             - containerPort: {{ .Values.worldserver.soapPort }}

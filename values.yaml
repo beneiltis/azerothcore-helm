@@ -1,3 +1,6 @@
+#global
+tag: 1.0.9
+
 # Database settings
 mysql:
   image: mysql:8.0
@@ -6,14 +9,14 @@ mysql:
 
 # Worldserver settings
 worldserver:
-  image: biltisberger/ac-wotlk-worldserver:latest
+  image: biltisberger/ac-wotlk-worldserver
   user: acore
   worldPort: 8085
   soapPort: 7878
 
 # Authserver settings
 authserver:
-  image: biltisberger/ac-wotlk-authserver:latest
+  image: biltisberger/ac-wotlk-authserver
   port: 3724
 
 # Eluna TypeScript settings
@@ -21,7 +24,7 @@ elunaTs:
   image: biltisberger/eluna-ts:master
 
 acDbImport:
-  image: biltisberger/ac-wotlk-db-import:latest
+  image: biltisberger/ac-wotlk-db-import
   environment:
     AC_DISABLE_INTERACTIVE: "1"
     AC_DATA_DIR: "/azerothcore/env/dist/data"
@@ -32,7 +35,7 @@ acDbImport:
     AC_CLOSE_IDLE_CONNECTIONS: "0"
 
 acClientData:
-  image: biltisberger/ac-wotlk-client-data:latest
+  image: biltisberger/ac-wotlk-client-data
   volume:
     name: ac-client-data
     mountPath: /azerothcore/env/dist/data

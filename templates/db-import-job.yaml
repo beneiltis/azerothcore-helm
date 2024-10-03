@@ -9,7 +9,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: ac-db-import
-          image: "{{ .Values.acDbImport.image }}"
+          image: "{{ .Values.acDbImport.image }}:{{ .Values.tag }}"
           env:
             - name: AC_DISABLE_INTERACTIVE
               value: "{{ .Values.acDbImport.environment.AC_DISABLE_INTERACTIVE }}"
