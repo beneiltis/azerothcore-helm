@@ -16,14 +16,9 @@ authserver:
   image: biltisberger/ac-wotlk-authserver:1.0.2
   port: 3724
 
-# PhpMyAdmin
-phpmyadmin:
-  image: phpmyadmin
-  port: 8080
-
 # Eluna TypeScript settings
 elunaTs:
-  image: acore/eluna-ts:master
+  image: biltisberger/eluna-ts:master
 
 acDbImport:
   image: acore/ac-wotlk-db-import:1.0.2
