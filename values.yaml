@@ -21,7 +21,7 @@ elunaTs:
   image: biltisberger/eluna-ts:master
 
 acDbImport:
-  image: biltisberger/ac-wotlk-db-import:lattest
+  image: biltisberger/ac-wotlk-db-import:latest
   environment:
     AC_DISABLE_INTERACTIVE: "1"
     AC_DATA_DIR: "/azerothcore/env/dist/data"
