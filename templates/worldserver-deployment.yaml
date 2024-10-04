@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worldserver
-          image: "{{ .Values.authserver.image }}:{{ .Values.tag }}"
+          image: "{{ .Values.worldserver.image }}:{{ .Values.tag }}"
           tty: true
           stdin: true
           ports:
