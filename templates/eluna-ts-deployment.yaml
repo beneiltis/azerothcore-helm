@@ -1,19 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: eluna-ts
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: eluna-ts
-  template:
-    metadata:
-      labels:
-        app: eluna-ts
-    spec:
-      containers:
-        - name: eluna-ts
-          image: "{{ .Values.elunaTs.image }}"
-          ports:
-            - containerPort: 3000
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: eluna-ts
+#spec:
+#  replicas: 1
+#  selector:
+#    matchLabels:
+#      app: eluna-ts
+#  template:
+#    metadata:
+#      labels:
+#        app: eluna-ts
+#    spec:
+#      containers:
+#        - name: eluna-ts
+#          image: "{{ .Values.elunaTs.image }}"
+#          ports:
+#            - containerPort: 3000
