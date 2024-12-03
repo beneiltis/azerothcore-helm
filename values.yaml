@@ -43,5 +43,5 @@ acClientData:
 # Volumes
 persistence:
   enabled: true
-  dataVolumeSize: 20Gi
+  dataVolumeSize: 10Gi
   databaseVolumeSize: 5Gi
