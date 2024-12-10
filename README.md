@@ -1,4 +1,5 @@
 Architecture Overview:
+```
                          +--------------+
                          |              |
                          |  Game Client |
@@ -20,3 +21,4 @@ Architecture Overview:
      |    MySQL-Database  |<-------->|    World-Server  |
      |                    |          |                  |
      +--------------------+          +------------------+
+```
