@@ -38,6 +38,7 @@ spec:
               mountPath: "{{ .Values.acClientData.volume.mountPath }}"
       volumes:
         - name: ac-data
-          persistentVolumeClaim:
-            claimName: ac-data
+          nfs:
+            path: /var/nfs/shared/k8s/wow-ac-data
+            server: 192.168.1.134
             

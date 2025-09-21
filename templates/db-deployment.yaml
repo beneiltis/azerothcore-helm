@@ -24,10 +24,14 @@ spec:
                   name: mysql-secret
                   key: root-password
           volumeMounts:
-            - name: ac-database-pvc
+            - name: ac-database
               mountPath: /var/lib/mysql
+          securityContext:
+            runAsGroup: 988
+            runAsUser: 977
       volumes:
-        - name: ac-database-pvc
-          persistentVolumeClaim:
-            claimName: ac-database-pvc
+        - name: ac-database
+          nfs:
+            path: /var/nfs/shared/k8s/wow-ac-database
+            server: 192.168.1.134
             
